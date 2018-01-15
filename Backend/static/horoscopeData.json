@@ -1,0 +1,76 @@
+{
+    "horoscopes": [
+        {
+            "name":"Aries",
+            "dateRange": "March 21 - April 19",
+            "lowDate": "2018-03-21T07:00:00.000Z",
+            "highDate": "2018-04-19T07:00:00.000Z"
+        },
+        {
+            "name":"Taurus",
+            "dateRange": "April 20 - May 20",
+            "lowDate": "2018-04-20T07:00:00.000Z",
+            "highDate": "2018-05-20T07:00:00.000Z"
+        },
+        {
+            "name":"Gemini",
+            "dateRange": "May 21 - June 20",
+            "lowDate": "2018-05-21T07:00:00.000Z",
+            "highDate": "2018-06-20T07:00:00.000Z"
+        },
+        {
+            "name":"Cancer",
+            "dateRange": "June 21 - July 22",
+            "lowDate": "2018-06-21T07:00:00.000Z",
+            "highDate": "2018-07-22T07:00:00.000Z"
+        },
+        {
+            "name":"Leo",
+            "dateRange": "July 23 - August 22",
+            "lowDate": "2018-07-23T07:00:00.000Z",
+            "highDate": "2018-08-22T07:00:00.000Z"
+        },
+        {
+            "name":"Virgo",
+            "dateRange": "August 23 - September 22",
+            "lowDate": "2018-08-23T07:00:00.000Z",
+            "highDate": "2018-09-22T07:00:00.000Z"
+        },
+        {
+            "name":"Libra",
+            "dateRange": "September 23 - October 22",
+            "lowDate": "2018-09-23T07:00:00.000Z",
+            "highDate": "2018-10-22T07:00:00.000Z"
+        },
+        {
+            "name":"Scorpio",
+            "dateRange": "October 23 - November 21",
+            "lowDate": "2018-10-23T07:00:00.000Z",
+            "highDate": "2018-11-21T07:00:00.000Z"
+        },
+        {
+            "name":"Sagittarius",
+            "dateRange": "November 22 - December 21",
+            "lowDate": "2018-11-22T07:00:00.000Z",
+            "highDate": "2018-12-21T07:00:00.000Z"
+        },
+        {
+            "name":"Capricorn",
+            "dateRange": "December 22 - January 19",
+            "lowDate": "2018-12-22T07:00:00.000Z",
+            "highDate": "2019-01-19T07:00:00.000Z"
+        },
+        {
+            "name":"Aquarius",
+            "dateRange": "January 20 - February 18",
+            "lowDate": "2018-01-20T07:00:00.000Z",
+            "highDate": "2019-02-18T07:00:00.000Z"
+        },
+        {
+            "name":"Pisces",
+            "dateRange": "February 19 - March 20",
+            "lowDate": "2018-02-19T07:00:00.000Z",
+            "highDate": "2019-03-20T07:00:00.000Z"
+        }
+    ]
+}
