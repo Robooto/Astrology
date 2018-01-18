@@ -1,10 +1,17 @@
-const scraper = require('./scraper/scraper');
-const horoscopeData = require('./static/horoscopeData.json');
-const url = `https://www.freewillastrology.com/horoscopes/allsigns.html`;
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const app = express();
 
+// routes
+const scopesController = require('./controllers/scopes.controller');
 
-scraper.getWebsiteHtml(url)
-    .then(body => scraper.parseHoroscopeData(body))
-    .then(scopes => scraper.addHoroscopes(scopes, horoscopeData))
-    .then(data => console.log(data))
-    .catch(err => console.error(err));
+app.use(cors());
+app.use(bodyParser.json());
+
+app.use('/scopes', scopesController);
+
+app.listen(3000, () => console.log(`app running on port 3000`));
+
+// for our tests
+module.exports = app; 
