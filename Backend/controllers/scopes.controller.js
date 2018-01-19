@@ -4,7 +4,7 @@ const scraper = require('../scraper/scraper');
 const horoscopeData = require('../static/horoscopeData.json');
 
 
-
+/** Scopes Controller */
 class ScopesController {
 
     constructor(router) {
@@ -14,19 +14,33 @@ class ScopesController {
 
     init() {
         this.router.get('/', this.getScopes.bind(this));
+        this.router.get('/:sign', this.getScopeByName.bind(this));
+    }
+
+    /** get scope data */
+    getScopeData() {
+        return new Promise((resolve, reject) => {
+            const url = `https://www.freewillastrology.com/horoscopes/allsigns.html`;
+            scraper.getWebsiteHtml(url)
+                .then(body => scraper.parseHoroscopeData(body))
+                .then(scopes => scraper.addHoroscopes(scopes, horoscopeData))
+                .then(data => resolve(data))
+                .catch(err => reject(err));
+        });
     }
 
     async getScopes(req, res) {
-        const url = `https://www.freewillastrology.com/horoscopes/allsigns.html`;
-        let body = await scraper
-            .getWebsiteHtml(url)
+        let data = await this.getScopeData()
             .catch(err => this.handleError(err, res));
-        let scopes = await scraper
-            .parseHoroscopeData(body)
+        return res.send(data);
+    }
+
+    async getScopeByName(req, res) {
+        let sign = req.params.sign;
+        let data = await this.getScopeData()
             .catch(err => this.handleError(err, res));
-        let data = await scraper
-            .addHoroscopes(scopes, horoscopeData)
-            .catch(err => this.handleError(err, res));
+
+        data.horoscopes = data.horoscopes.filter(i => i.sign.toLocaleLowerCase() === sign.toLocaleLowerCase());
         return res.send(data);
     }
 

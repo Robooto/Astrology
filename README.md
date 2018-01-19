@@ -9,9 +9,11 @@ The backend will be an express app that scrapes an astrology website and parses 
 * npm start
 * npm test
 
-## TODO
-* Add express
-* Add routes
+## Routes
+- /scopes
+    - Returns all horoscope data
+- /scopes/:sign
+    - Returns the horscope for the sign
 
 
 #### Frontend
